@@ -1,6 +1,8 @@
+import { Header } from "./Movies/Header";
 export const Home = () => {
   return (
-    <div>Home l</div>
-  )
-}
-
+    <>
+      <Header />
+    </>
+  );
+};
