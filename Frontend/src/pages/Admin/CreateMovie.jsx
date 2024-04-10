@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   useCreateMovieMutation,
-  useUpdateMovieMutation,
   useUploadImageMutation,
 } from "../../redux/api/movies";
 import { useFetchGenresQuery } from "../../redux/api/Genre";
 import { toast } from "react-toastify";
-// import e from "express";
+
 export const CreateMovie = () => {
   const navigate = useNavigate();
 
@@ -20,26 +19,34 @@ export const CreateMovie = () => {
     image: null,
     genre: "",
   });
+
   const [selectedImage, setSelectedImage] = useState(null);
+
   const [
     createMovie,
     { isLoading: isCreatingMovie, error: createMovieErrorDetail },
   ] = useCreateMovieMutation();
+
   const [
     uploadImage,
     { isLoading: isUploadingImage, error: uploadImageErrorDetails },
   ] = useUploadImageMutation();
+
   const { data: genres, isLoading: isLoadingGenres } = useFetchGenresQuery();
+
   useEffect(() => {
     if (genres) {
       setMovieData((prevData) => ({
         ...prevData,
-        genre: genres[0]?.id || "",
+        genre: genres[0]?._id || "",
       }));
+      console.log(genres[0]?._id);
     }
   }, [genres]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     if (name === "genre") {
       const selectedGenre = genres.find((genre) => genre.name === value);
 
@@ -54,6 +61,7 @@ export const CreateMovie = () => {
       }));
     }
   };
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setSelectedImage(file);
@@ -112,6 +120,7 @@ export const CreateMovie = () => {
       toast.error(`Failed to create movie: ${createMovieErrorDetail?.message}`);
     }
   };
+
   return (
     <div className="container flex justify-center items-center mt-4">
       <form>
