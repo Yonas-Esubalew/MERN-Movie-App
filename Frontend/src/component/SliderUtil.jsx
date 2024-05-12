@@ -2,7 +2,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {MovieCard} from "../pages/Movies/MovieCard";
-
 export const SliderUtil = ({ data }) => {
   const settings = {
     dots: true,
@@ -11,7 +10,6 @@ export const SliderUtil = ({ data }) => {
     slidesToShow: 4,
     slidesToScroll: 2,
   };
-
   return (
     <Slider {...settings}>
       {data?.map((movie) => (

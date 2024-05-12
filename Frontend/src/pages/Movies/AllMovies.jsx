@@ -23,38 +23,30 @@ export const AllMovies = () => {
   const { data: newMovies } = useGetNewMoviesQuery();
   const { data: topMovies } = useGetTopMoviesQuery();
   const { data: randomMovies } = useGetRandomMoviesQuery();
-
   const { moviesFilter, filteredMovies } =
     useSelector((state) => state.movies) || {};
   const movieYears = data?.map((movie) => movie.year);
   const uniqueYears = Array.from(new Set(movieYears));
-
   useEffect(() => {
     dispatch(setFilteredMovies(data || []));
     dispatch(setMovieYears(movieYears));
     dispatch(setUniqueYears(uniqueYears));
   }, [data, dispatch]);
-
   const handleSearchChange = (e) => {
     dispatch(setMoviesFilter({ searchTerm: e.target.value }));
-
     const filteredMovies = data.filter((movie) =>
       movie.name.toLowerCase().includes(e.target.value.toLowerCase())
     );
-
     dispatch(setFilteredMovies(filteredMovies));
   };
-
   const handleGenreClick = (genreId) => {
     const filterByGenre = data.filter((movie) => movie.genre === genreId);
     dispatch(setFilteredMovies(filterByGenre));
   };
-
   const handleYearChange = (year) => {
     const filterByYear = data.filter((movie) => movie.year === +year);
     dispatch(setFilteredMovies(filterByYear));
   };
-
   const handleSortChange = (sortOption) => {
     switch (sortOption) {
       case "new":
@@ -72,7 +64,6 @@ export const AllMovies = () => {
         break;
     }
   };
-
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 -translate-y-[5rem]">
       <>
@@ -111,7 +102,6 @@ export const AllMovies = () => {
                     </option>
                   ))}
                 </select>
-
                 <select
                   className="border p-2 rounded ml-4 text-black"
                   value={moviesFilter.selectedYear}
@@ -138,7 +128,6 @@ export const AllMovies = () => {
               </section>
             </section>
           </div>
-
           <section className="mt-[10rem] w-screen flex justify-center items-center flex-wrap">
             {filteredMovies?.map((movie) => (
               <MovieCard key={movie._id} movie={movie} />

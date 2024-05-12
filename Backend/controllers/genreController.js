@@ -1,6 +1,5 @@
 import Genre from "../models/Genre.js";
 import { asyncHandler } from "../middlewares/asyncHandler.js";
-
 export const createGenre = asyncHandler(async (req, res) => {
   try {
     const { name } = req.body;
@@ -11,7 +10,6 @@ export const createGenre = asyncHandler(async (req, res) => {
     if (existingGenre) {
       return res.json({ error: "Already exists" });
     }
-
     const genre = await new Genre({ name }).save();
     res.json(genre);
   } catch (error) {
@@ -19,6 +17,7 @@ export const createGenre = asyncHandler(async (req, res) => {
     return res.status(400).json(error);
   }
 });
+
 export const updateGenre = asyncHandler(async (req, res) => {
   try {
     const { name } = req.body;

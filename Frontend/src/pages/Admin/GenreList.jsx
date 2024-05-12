@@ -5,22 +5,18 @@ import {
   useDeleteGenreMutation,
   useFetchGenresQuery,
 } from "../../redux/api/Genre";
-
 import { toast } from "react-toastify";
 import { GenreForm } from "../../component/GenreForm";
 import { Modal } from "../../component/Modal";
-
 export const GenreList = () => {
   const { data: genres, refetch } = useFetchGenresQuery();
   const [name, setName] = useState("");
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [updatingName, setUpdatingName] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
-
   const [createGenre] = useCreateGenreMutation();
   const [updateGenre] = useUpdateGenreMutation();
   const [deleteGenre] = useDeleteGenreMutation();
-
   const handleCreateGenre = async (e) => {
     e.preventDefault();
 
