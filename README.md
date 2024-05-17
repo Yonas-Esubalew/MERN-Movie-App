@@ -1,4 +1,4 @@
-This MERN Movie Application RunS on The Server In The Following Rules,
+This MERN Movie Application Runs on The Server In The Following Rules,
 Open Your Vs Code Command line On the Project
 Start  the Command - cd Frontend
 Then nmp install react,
@@ -23,7 +23,7 @@ Second cd .. back to Project
     multer,
     nodemon
 
-Then Run The Whole Frontend Ad Backend Codes follow These scripts description 
+Then Run The Whole Frontend and Backend Codes follow These scripts description 
 "scripts": {
     "fullstack": "concurrently \"npm run backend\" \"npm run frontend\"",
     "frontend": "cd frontend && npm run dev",
