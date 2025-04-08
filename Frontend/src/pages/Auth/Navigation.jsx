@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useLoginMutation, useLogoutMutation } from "../../redux/api/users";
 import { logout } from "../../redux/features/auth/authSlice";
-import { STATES } from "mongoose";
+
 
 export const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
