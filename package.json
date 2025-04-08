@@ -1,15 +1,15 @@
 {
   "name": "movie-mern-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "A full-stack MERN application",
   "main": "index.js",
   "scripts": {
-    "fullstack": "concurrently \"npm run backend\" \"npm run Frontend\"",
+    "fullstack": "concurrently \"npm run Backend\" \"npm run Frontend\"",
     "frontend": "cd Frontend && npm run dev",
-    "backend": "nodemon backend/index.js",
+    "backend": "nodemon Backend/index.js",
     "build": "cd Frontend && npm install && npm run build",
-    "start": "cross-env NODE_ENV=production node backend/index.js",
-    "dev": "cross-env NODE_ENV=development nodemon backend/index.js"
+    "start": "cross-env NODE_ENV=production node Backend/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon Backend/index.js"
   },
   "type": "module",
   "dependencies": {
