@@ -94,8 +94,8 @@ Ensure you have the following installed:
 3. Set up environment variables:
    - Create a `.env` file in the `backend` directory with the following keys:
      ```env
-     MONGO_URI='mongodb+srv://yonasbe999:mKlJA69xeDETOfC9@cluster0.r24523p.mongodb.net/moviesApp?retryWrites=true&w=majority&appName=Cluster0'
-     JWT_SECRET=dfhjryrovnfhdeyrwpori85475
+     MONGO_URI='mongodb+srv://yourusername@cluster0.r24523p.mongodb.net/moviesApp?retryWrites=true&w=majority&appName=Cluster0'
+     JWT_SECRET=your Api Sectet code
      ```
 
 4. Start the development servers:
