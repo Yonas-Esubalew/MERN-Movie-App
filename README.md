@@ -1,6 +1,8 @@
-# MERN Movie Application
+# 🎬 MERN Movie Application
 
-A **movie streaming application** inspired by Netflix, built using the MERN stack (MongoDB, Express.js, React.js, and Node.js). This application enables users to browse, search, and stream movies and TV shows with advanced filtering criteria for a personalized experience.
+A full-stack movie browsing platform built with **MongoDB**, **Express.js**, **React.js**, and **Node.js** — allowing users to explore, favorite, and manage movie content in real time.
+
+![MERN Movie App Thumbnail](https://github.com/Yonas-Esubalew/MERN-Movie-App/blob/main/thumb.png?raw=true)
 
 This MERN Movie Application Runs on The Server In The Following Rules,
 Open Your Vs Code Command line On the Project
@@ -164,10 +166,13 @@ Contributions are welcome! If you have suggestions or want to improve the projec
 
 ---
 
-## Contact
+## 👨‍💻 Author
 
-- **Author**: [Yonas Esubalew](https://github.com/Yonas-Esubalew)
-- **Email**: yonasatwork999@gmail.com
-
+- **Author**: [Yonas Esubalew](https://github.com/Yonas-Esubalew)  
+- **Email**: yonasatwork999@gmail.com  
+- **Website**: [https://yonas-esubalew.vercel.app](https://yonas-esubalew.vercel.app)
 
     
+## 🌍 Live Demo
+
+👉 [Visit the Live App](https://mern-movie-app-tg11.onrender.com/)
